@@ -1,0 +1,87 @@
+particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-align: center;
+  background-color: #383A57;
+}
+
+.wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+   padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  /* line-height: 60px; */
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 800;
+  background: linear-gradient(90deg, yellow, orange, red, violet, purple, blue, yellow);
+  background-size: 400%;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  /* z-index: -1; */
+}
+button:hover {
+  animation: animate 8s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+button:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(45deg, #f15523, #ef3224, #7c3697);
+  background-size: 400%;
+  border-radius: 40px;
+  opacity: 0;
+  transition: 0.5%;
+}
+button:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
+}
+
+
+.preloader {
+  position: absolute;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/mario-face.png);
+}
